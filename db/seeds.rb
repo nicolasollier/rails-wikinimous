@@ -11,9 +11,9 @@ Article.destroy_all
 
 puts "🌱 Seeding Database ..."
 
-100.times do
-  Article.create(title: Faker::Book.title, content: Faker::Lorem.paragraph_by_chars(number: 256, supplemental: false))
-  puts "⚙️ Add 1 article ..."
+30.times do
+  Article.create(title: Faker::Book.title, content: Faker::Lorem.paragraph_by_chars(number: 4200, supplemental: true))
+  puts "🪄 Add 1 article ..."
 end
 
 puts "✅ Done!"

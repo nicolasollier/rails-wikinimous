@@ -1,5 +1,11 @@
+//Global Style
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 @import "bootstrap/scss/bootstrap";
+
+//Components
+@import "./components/navbar.scss"; 
+
+//Global style
 
 * {
   font-family: 'Poppins', sans-serif;
@@ -18,7 +24,7 @@ button {
 }
 
 i {
-  color: #e11d48;
+  color: #0f172a;
 }
 
 .list-group-item {
@@ -27,8 +33,29 @@ i {
 
 .list-group-item p {
   color: #64748b;
+  margin-top: 6px;
 }
 
 .list-group-item h3 {
   color: #0f172a;
+}
+
+.main-wrapper {
+  display: flex;
+  width: 100%;
+  padding-bottom: 120px;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main-wrapper p {
+  padding: 20px 40px 10px 40px;
+  text-align: justify;
+}
+
+@media screen and (max-width: 425px) {
+  article p {
+    padding: 0 !important;
+    text-align: center !important;
+  }
 }

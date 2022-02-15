@@ -1,6 +1,8 @@
 <header class="px-4 py-5 my-5 text-center">
-  <h1>Wikinonimous</h1>
+  <h1>Wikinimous</h1>
+  <%= link_to new_article_path do %>
   <div class="btn btn-outline-primary">Add an article</div>
+  <% end %>
 </header>
 
 <ul class="list-group mb-5">
@@ -8,18 +10,18 @@
   <li class="list-group-item d-flex align-items-center">
 
     <div class="text-items d-flex flex-column flex-grow-1">
+
       <h3> <%= article.title %> </h3>
-      <p> <%= article.content %> </p>
+      <p> <%= truncate(article.content, :length => 260) %> </p>
+
       <br>
+
       <div class="actions d-flex flex-row">
-        <%= link_to article_path(article),
-              method: :delete,
-              data: { confirm: nil } do %>
-              <div class="btn btn-sm btn-outline-danger">Delete this article</div>
+        <%= link_to article_path(article) do %>
+          <div class="btn btn-sm btn-outline-primary">Read more</div>
         <% end %>
       </div>
     </div>
-    
   </li>
   <% end %>
 </ul>

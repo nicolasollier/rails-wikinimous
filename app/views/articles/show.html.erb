@@ -1,0 +1,23 @@
+<nav class="navbar centered navbar-light bg-white">
+  <a href="/"><i class="fa-solid fa-arrow-left-long"></i></a>
+  <a class="navbar-brand" href="/">Wikinimous</a>
+</nav>
+
+<div class="container main-wrapper">
+  <article class="px-4 py-5 my-5 text-center">
+    <h1> <%= @article.title %> </h1>
+    <p> <%= @article.content %> </p>
+  </article>
+  <div class="actions d-flex flex-row justify-content-center">
+  <%= link_to article_path(@article) do %>
+    <div class="btn btn-outline-primary">Edit this article</div>
+  <% end %>
+
+  <%= link_to article_path(@article),
+        method: :delete,
+        data: { confirm: nil } do %>
+        <div class="btn btn-outline-danger mx-3">Delete this article</div>
+  <% end %>
+</div>
+
+</div>
