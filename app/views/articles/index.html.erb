@@ -1,0 +1,25 @@
+<header class="px-4 py-5 my-5 text-center">
+  <h1>Wikinonimous</h1>
+  <div class="btn btn-outline-primary">Add an article</div>
+</header>
+
+<ul class="list-group mb-5">
+  <% @articles.each do |article| %>
+  <li class="list-group-item d-flex align-items-center">
+
+    <div class="text-items d-flex flex-column flex-grow-1">
+      <h3> <%= article.title %> </h3>
+      <p> <%= article.content %> </p>
+      <br>
+      <div class="actions d-flex flex-row">
+        <%= link_to article_path(article),
+              method: :delete,
+              data: { confirm: nil } do %>
+              <div class="btn btn-sm btn-outline-danger">Delete this article</div>
+        <% end %>
+      </div>
+    </div>
+    
+  </li>
+  <% end %>
+</ul>
